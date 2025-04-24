@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	// Cloud Run injects the PORT environment variable.
+	// Cloud Run injects the PORT environment variable
 	// Default to 8080 for local development.
 	port := os.Getenv("PORT")
 	if port == "" {
