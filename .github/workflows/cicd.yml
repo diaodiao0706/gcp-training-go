@@ -51,3 +51,4 @@ jobs:
       - run: gcloud auth configure-docker us-east1-docker.pkg.dev
       - run: docker buildx build --platform linux/amd64 -t us-east1-docker.pkg.dev/zhuorandiao-cdks2/diaodiao0706/gcp-training-go .
       - run: docker push us-east1-docker.pkg.dev/zhuorandiao-cdks2/diaodiao0706/gcp-training-go
+    needs: [golangci, buildtest]
