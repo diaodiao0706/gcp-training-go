@@ -1,4 +1,4 @@
-name: golangci-lint
+name: cicd
 on:
   push:
     branches:
@@ -24,3 +24,18 @@ jobs:
         uses: golangci/golangci-lint-action@v7
         with:
           version: v2.0
+  buildtest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.21.x'
+      - name: Install dependencies
+        run: go get .
+      - name: Build
+        run: go build -v ./...
+      - name: Test with the Go CLI
+        run: go test
