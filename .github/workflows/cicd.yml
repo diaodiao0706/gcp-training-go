@@ -4,7 +4,7 @@ jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
-      - run: sudo apt-get golangci-lint
+      - run: sudo apt-get install golangci-lint
       - run: golangci-lint run
       - run: go test
     
