@@ -1,0 +1,12 @@
+name: CICD
+on: [push]
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Lint code
+      run: golangci-lint run
+    - name: Test
+      run: go test
+    
+        
