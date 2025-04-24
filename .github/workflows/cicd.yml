@@ -1,13 +1,11 @@
 name: CICD
 on: [push]
 jobs:
-  Test:
+  CI:
     runs-on: ubuntu-latest
     steps:
-    - name: Lint code
-      run: sudo apt-get golangci-lint
-           golangci-lint run
-    - name: Test
-      run: go test
+      - run: sudo apt-get golangci-lint
+      - run: golangci-lint run
+      - run: go test
     
         
